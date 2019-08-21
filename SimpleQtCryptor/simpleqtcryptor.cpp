@@ -322,6 +322,7 @@ Error Encryptor::encrypt(const QByteArray &plain, QByteArray &cipher, bool end) 
         // switch (checksum) HERE
 
         state = StateOn;
+        break;
     case StateOn:
         tmpIn.append(plain);
         cipher = modex->encrypt(tmpIn, end);
@@ -427,6 +428,7 @@ Error Decryptor::decrypt(const QByteArray &cipher, QByteArray &plain, bool end) 
             tmpOut.clear();
             return ErrorInvalidKey;
         }
+        break;
 
     case StateOn:
         if ( tmpIn.isEmpty() ) {

@@ -97,6 +97,8 @@ void AsemanQtLogger::logMsg(QtMsgType type, const QMessageLogContext &context, c
         p->file->flush();
         p->file_mutex.unlock();
         abort();
+    default:
+        break;
     }
 }
 
